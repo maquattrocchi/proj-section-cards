@@ -1,5 +1,5 @@
 <template>
-  <main :style="{backgroundColor: color}">
+  <main :style="{backgroundColor: color}" class="flex flex-col justify-center h-screen">
     <section class="w-4/5 flex justify-between mx-auto px-8">
       <h1 class="text-5xl">Section Cards</h1>
       <div class="flex items-center gap-12">
@@ -26,7 +26,7 @@ export default {
     return{
       cardNumber: 5,
       color: '#F4EAE1',
-      min: 0,
+      min: 1,
       max: 20,
     }
   },
@@ -43,12 +43,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../style/vars';
-main{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #F4EAE1;
-}
+
 </style>

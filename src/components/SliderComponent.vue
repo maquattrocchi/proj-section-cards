@@ -1,9 +1,10 @@
 <template>
   <section>
-    <div class="slider w-4/5 py-8 flex mx-auto">
+    
+    <div class="slider w-4/5 py-8 flex mx-auto" :class="cardNumber < 3 ? 'justify-center' : ''">
         <card-component :item="cards[firstIndex]"/>
-        <card-component :item="cards[secondIndex]"/>
-        <card-component :item="cards[thirdIndex]"/>
+        <card-component :item="cards[secondIndex]" v-if="cardNumber > 1"/>
+        <card-component :item="cards[thirdIndex]" v-if="cardNumber > 2"/>
     </div>
     <div class="flex justify-center align-center gap-4">
         <div class="circle rounded-full" v-for="(circle,index) in cards" :key="index" :class="{'active': index === secondIndex}"></div>
@@ -71,6 +72,61 @@ export default {
                     "img": "https://picsum.photos/200/300",
                     "title": "Tootsie roll I love fruitcake pastry tart jelly",
                     "subtitle": "9 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
+                    "subtitle": "10 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "I love bonbon oat cake caramels",
+                    "subtitle": "11 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "Tootsie roll I love fruitcake pastry tart jelly",
+                    "subtitle": "12 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
+                    "subtitle": "13 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "I love bonbon oat cake caramels",
+                    "subtitle": "14 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "Tootsie roll I love fruitcake pastry tart jelly",
+                    "subtitle": "15 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
+                    "subtitle": "16 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "I love bonbon oat cake caramels",
+                    "subtitle": "17 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "Tootsie roll I love fruitcake pastry tart jelly",
+                    "subtitle": "18 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
+                    "subtitle": "19 icing toffee sweet rool tootsie roll jelly apple pie.",
+                },
+                {
+                    "img": "https://picsum.photos/200/300",
+                    "title": "I love bonbon oat cake caramels",
+                    "subtitle": "20 icing toffee sweet rool tootsie roll jelly apple pie.",
                 },
             ]
         }

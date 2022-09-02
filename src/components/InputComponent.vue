@@ -68,8 +68,10 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: $black;
   cursor: pointer;
-  // box-shadow: 0 0 2px 0 #555;
-  transition: background .3s ease-in-out;
+
+  &:hover{
+    transform: scale(1.3);
+  }
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -79,7 +81,10 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   background: $black;
   cursor: pointer;
-  // box-shadow: 0 0 2px 0 #555;
+
+  &:hover{
+    transform: scale(1.3);
+  }
 }
 
 input[type="range"]::-ms-thumb {
@@ -89,6 +94,9 @@ input[type="range"]::-ms-thumb {
   border-radius: 50%;
   background: $black;
   cursor: pointer;
-  // box-shadow: 0 0 2px 0 #555;
+    
+  &:hover{
+    transform: scale(1.3);
+  }
 }
 </style>
