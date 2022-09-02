@@ -41,8 +41,15 @@ export default {
       top: 30px !important;
       left: unset !important;
       right: 0;
+      z-index: 200;
       .cpicker__palette, .cpicker__history {
          display: none;
+      }
+      .cpicker__gamut{
+         cursor: crosshair;
+      }
+      .gamut-tri__dot{
+         cursor: move;
       }
       .cpicker__ho {
          padding: 10px 10px 10px 10px !important;

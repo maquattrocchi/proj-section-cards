@@ -1,16 +1,33 @@
 <template>
   <section>
     
-    <div class="slider w-4/5 py-8 flex mx-auto" :class="cardNumber < 3 ? 'justify-center' : ''">
+    <div class="slider w-4/5 py-8 flex mx-auto relative" :class="cardNumber < 3 ? 'justify-center' : ''">
         <card-component :item="cards[firstIndex]"/>
         <card-component :item="cards[secondIndex]" v-if="cardNumber > 1"/>
         <card-component :item="cards[thirdIndex]" v-if="cardNumber > 2"/>
+
+        <div 
+        class="absolute translate-y-2/4 top-2/4 -left-3 text-3xl text-sub-text hover:text-black cursor-pointer" 
+        @click="prevSlide"
+        :class="{'text-black' : lSelected}"
+        v-if="cardNumber > 3">
+            <i class="fa-solid fa-arrow-left-long"></i>
+        </div>
+        <div 
+        class="absolute translate-y-2/4 top-2/4 -right-3 text-3xl text-sub-text hover:text-black cursor-pointer" 
+        @click="nextSlide"
+        :class="{'text-black' : rSelected}"
+        v-if="cardNumber > 3">
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </div>
     </div>
-    <div class="flex justify-center align-center gap-4">
-        <div class="circle rounded-full" v-for="(circle,index) in cards" :key="index" :class="{'active': index === secondIndex}"></div>
+    <div class="flex justify-center align-center gap-4" v-if="cardNumber > 3">
+        <div class="circle rounded-full" 
+        v-for="(circle,index) in cards" :key="index" 
+        :class="{'active': index === secondIndex}"
+        @click="dotChange(index, cards)">
+        </div>
     </div>
-        <div class="next" @click="prevSlide">prev</div>
-        <div class="next" @click="nextSlide">next</div>
   </section>
 </template>
 
@@ -27,6 +44,8 @@ export default {
             firstIndex: 0,
             secondIndex: 1,
             thirdIndex: 2,
+            rSelected: false,
+            lSelected: false,
             cardsArray:[
                 {
                     "img": "https://picsum.photos/200/300",
@@ -150,6 +169,8 @@ export default {
                 this.secondIndex--
                 this.thirdIndex--
             }
+            this.lSelected = true;
+            this.rSelected = false;
         },
         nextSlide(){
             if(this.thirdIndex == this.cards.length - 1){
@@ -169,7 +190,25 @@ export default {
                 this.secondIndex++
                 this.thirdIndex++
             }
+            this.rSelected = true;
+            this.lSelected = false;
+            console.log(this.rSelected)
         },
+        dotChange(index, cards){
+            if(index == 0){
+                this.firstIndex = cards.length - 1;
+                this.secondIndex = index;
+                this.thirdIndex = index + 1;
+            }else if (index == cards.length - 1){
+                this.firstIndex = cards.length - 2;
+                this.secondIndex = cards.length - 1;
+                this.thirdIndex = 0;
+            }else{
+                this.firstIndex = index - 1;
+                this.secondIndex = index;
+                this.thirdIndex = index +1;
+            }
+        }
     },
     computed: {
         cards(){
@@ -188,8 +227,14 @@ export default {
         width: 15px;
         height: 15px;
         background-color: $sub-text;
+        border: 2px solid $sub-text;
+        cursor: pointer;
+        &:hover{
+            background-color: $black;
+        }
         &.active{
             background-color: $black;
+            border-color: $black
         }
     }
 </style>

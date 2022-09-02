@@ -12,7 +12,7 @@
             @input="onInput"
             :style="{backgroundSize: bgSize + '% 100%' }"
         >
-        <span>{{cValue}}</span>
+        <span class="block w-6">{{cValue}}</span>
     </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     onInput() {
-      this.$emit('input', this.cValue);
+      this.$emit('input', parseInt(this.cValue));
       this.bgSize = (this.cValue - this.cMin) * 100 / (this.cMax - this.cMin);
     }
   }
@@ -63,8 +63,8 @@ input[type="range"] {
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   border-radius: 50%;
   background: $black;
   cursor: pointer;
@@ -76,8 +76,8 @@ input[type="range"]::-webkit-slider-thumb {
 
 input[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   border-radius: 50%;
   background: $black;
   cursor: pointer;
@@ -89,8 +89,8 @@ input[type="range"]::-moz-range-thumb {
 
 input[type="range"]::-ms-thumb {
   -webkit-appearance: none;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   border-radius: 50%;
   background: $black;
   cursor: pointer;
