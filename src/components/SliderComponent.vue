@@ -25,7 +25,7 @@
     <div class="flex flex-wrap justify-center align-center gap-4" v-if="cardNumber > 3">
         <div class="circle rounded-full" 
         v-for="(circle,index) in cards" :key="index" 
-        :class="{'active': index === secondIndex}"
+        :class="{'active': index === firstIndex}"
         @click="dotChange(index, cards)">
         </div>
     </div>
