@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-1/2 lg:w-1/3 p-8 h-full">
+  <div class="card w-full sm:w-1/2 lg:w-1/3 p-8 h-full">
     <div class="card-container bg-white p-6 flex flex-col rounded-3xl h-full justify-between text-center shadow-xl">
         <img :src="item.img" alt="" class="rounded-full mx-auto">
         <div>

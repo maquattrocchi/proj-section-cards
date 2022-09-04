@@ -3,9 +3,9 @@
     
     <div class="slider w-4/5 flex mx-auto relative" :class="cardNumber < 3 ? 'justify-center' : ''">
         <card-component :item="cards[firstIndex]"/>
-        <card-component :item="cards[secondIndex]" v-if="cardNumber > 1"/>
+        <card-component :item="cards[secondIndex]" v-if="cardNumber > 1" class="hidden sm:block"/>
         <card-component :item="cards[thirdIndex]" v-if="cardNumber > 2" class="hidden lg:block"/>
-
+        <!-- frecce slider -->
         <div 
         class="arr absolute translate-y-2/4 top-2/4 -left-3 text-3xl text-sub-text hover:text-black cursor-pointer" 
         @click="prevSlide"
@@ -21,7 +21,8 @@
             <i class="fa-solid fa-arrow-right-long"></i>
         </div>
     </div>
-    <div class="flex justify-center align-center gap-4" v-if="cardNumber > 3">
+    <!-- dot navigation -->
+    <div class="flex flex-wrap justify-center align-center gap-4" v-if="cardNumber > 3">
         <div class="circle rounded-full" 
         v-for="(circle,index) in cards" :key="index" 
         :class="{'active': index === secondIndex}"
