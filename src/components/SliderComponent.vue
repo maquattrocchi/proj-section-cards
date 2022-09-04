@@ -1,20 +1,20 @@
 <template>
   <section>
     
-    <div class="slider w-4/5 py-8 flex mx-auto relative" :class="cardNumber < 3 ? 'justify-center' : ''">
+    <div class="slider w-4/5 flex mx-auto relative" :class="cardNumber < 3 ? 'justify-center' : ''">
         <card-component :item="cards[firstIndex]"/>
         <card-component :item="cards[secondIndex]" v-if="cardNumber > 1"/>
-        <card-component :item="cards[thirdIndex]" v-if="cardNumber > 2"/>
+        <card-component :item="cards[thirdIndex]" v-if="cardNumber > 2" class="hidden lg:block"/>
 
         <div 
-        class="absolute translate-y-2/4 top-2/4 -left-3 text-3xl text-sub-text hover:text-black cursor-pointer" 
+        class="arr absolute translate-y-2/4 top-2/4 -left-3 text-3xl text-sub-text hover:text-black cursor-pointer" 
         @click="prevSlide"
         :class="{'text-black' : lSelected}"
         v-if="cardNumber > 3">
             <i class="fa-solid fa-arrow-left-long"></i>
         </div>
         <div 
-        class="absolute translate-y-2/4 top-2/4 -right-3 text-3xl text-sub-text hover:text-black cursor-pointer" 
+        class="arr absolute translate-y-2/4 top-2/4 -right-3 text-3xl text-sub-text hover:text-black cursor-pointer" 
         @click="nextSlide"
         :class="{'text-black' : rSelected}"
         v-if="cardNumber > 3">
@@ -51,101 +51,121 @@ export default {
                     "img": "https://picsum.photos/200/300",
                     "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
                     "subtitle": "1 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "I love bonbon oat cake caramels",
                     "subtitle": "2 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/chi-siamo/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Tootsie roll I love fruitcake pastry tart jelly",
                     "subtitle": "3 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/user-experience-design-roma/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
                     "subtitle": "4 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "I love bonbon oat cake caramels",
                     "subtitle": "5 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/chi-siamo/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Tootsie roll I love fruitcake pastry tart jelly",
                     "subtitle": "6 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/user-experience-design-roma/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
                     "subtitle": "7 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "I love bonbon oat cake caramels",
                     "subtitle": "8 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/chi-siamo/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Tootsie roll I love fruitcake pastry tart jelly",
                     "subtitle": "9 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/user-experience-design-roma/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
                     "subtitle": "10 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "I love bonbon oat cake caramels",
                     "subtitle": "11 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/chi-siamo/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Tootsie roll I love fruitcake pastry tart jelly",
                     "subtitle": "12 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/user-experience-design-roma/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
                     "subtitle": "13 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "I love bonbon oat cake caramels",
                     "subtitle": "14 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/chi-siamo/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Tootsie roll I love fruitcake pastry tart jelly",
                     "subtitle": "15 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/user-experience-design-roma/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
                     "subtitle": "16 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "I love bonbon oat cake caramels",
                     "subtitle": "17 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/chi-siamo/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Tootsie roll I love fruitcake pastry tart jelly",
                     "subtitle": "18 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/user-experience-design-roma/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "Bear claw gumi bears fruitcake cookie snaps wafer",
                     "subtitle": "19 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/"
                 },
                 {
                     "img": "https://picsum.photos/200/300",
                     "title": "I love bonbon oat cake caramels",
                     "subtitle": "20 icing toffee sweet rool tootsie roll jelly apple pie.",
+                    "link": "https://www.nois3.it/chi-siamo/"
                 },
             ]
         }
@@ -229,6 +249,7 @@ export default {
         background-color: $sub-text;
         border: 2px solid $sub-text;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
         &:hover{
             background-color: $black;
         }
@@ -236,5 +257,8 @@ export default {
             background-color: $black;
             border-color: $black
         }
+    }
+    .arr{
+        transition: all 0.4s ease-in-out;
     }
 </style>

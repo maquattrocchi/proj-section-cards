@@ -68,7 +68,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: $black;
   cursor: pointer;
-
+  transition: all 0.4s ease-in-out;
   &:hover{
     transform: scale(1.3);
   }
@@ -81,9 +81,9 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   background: $black;
   cursor: pointer;
-
+  transition: all 0.4s ease-in-out;
   &:hover{
-    transform: scale(1.3);
+    transform: scale(1.4);
   }
 }
 
@@ -94,7 +94,7 @@ input[type="range"]::-ms-thumb {
   border-radius: 50%;
   background: $black;
   cursor: pointer;
-    
+  transition: all 0.4s ease-in-out;
   &:hover{
     transform: scale(1.3);
   }

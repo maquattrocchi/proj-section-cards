@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-1/3 p-8 h-full">
+  <div class="card w-1/2 lg:w-1/3 p-8 h-full">
     <div class="card-container bg-white p-6 flex flex-col rounded-3xl h-full justify-between text-center shadow-xl">
         <img :src="item.img" alt="" class="rounded-full mx-auto">
         <div>
@@ -29,13 +29,12 @@ export default {
         .btn{
             padding: 0.3rem 0.7rem;
             border: 3px solid transparent;
+            transition: all 0.4s ease-in-out;
             &:visited{
-                background-color: rgba($btn, 0.7);
+                background-color: #ca0d00;
             }
             &:hover{
-                background-color: $white;
-                border-color: $btn;
-                color: $btn;
+                transform: scale(1.1);
             }
         }
     }

@@ -23,14 +23,20 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../style/vars';
+
 .cpicker {
    width: 50px;
    height: 25px !important;
-   outline: white solid 3px;
+   outline: white solid 4px;
    border-radius: 20px;
    overflow: hidden;
    vertical-align: middle;
    cursor: pointer;
+   transition: all 0.4s ease-in-out;
+   &:hover{
+      box-shadow: 0px 0px 17px 5px $white;
+   }
 }
 .cpicker__dropdown{
    position: unset !important;
